@@ -15,19 +15,19 @@ import torch.optim as optim
 import torch.nn.functional as F
 from collections import namedtuple, deque
 import matplotlib.pyplot as plt
-import math
+import math`nfrom typing import Optional
 
 # --- Game Environment ---
 class TicTacToe:
     """A class to represent the Tic-Tac-Toe game environment."""
-    def __init__(self):
+    def __init__(self) -> None:
         self.board = np.zeros(9, dtype=np.float32)
-        self.current_winner = None
+        self.current_winner: Optional[float] = None
 
-    def available_moves(self):
+    def available_moves(self) -> list[int]:
         return [i for i, spot in enumerate(self.board) if spot == 0]
 
-    def make_move(self, square, letter):
+    def make_move(self, square: int, letter: float) -> bool:
         if self.board[square] == 0:
             self.board[square] = letter
             if self.winner(square, letter):
@@ -35,7 +35,7 @@ class TicTacToe:
             return True
         return False
 
-    def winner(self, square, letter):
+    def winner(self, square: int, letter: float) -> bool:
         # Check row, column, and diagonals for a win
         row_ind = square // 3
         if all(self.board[row_ind*3 + i] == letter for i in range(3)): return True
@@ -46,12 +46,12 @@ class TicTacToe:
             if all(self.board[i] == letter for i in [2, 4, 6]): return True
         return False
 
-    def get_state(self):
+    def get_state(self) -> np.ndarray:
         return self.board.copy()
 
-    def reset(self):
+    def reset(self) -> np.ndarray:
         self.board = np.zeros(9, dtype=np.float32)
-        self.current_winner = None
+        self.current_winner: Optional[float] = None
         return self.get_state()
 
 # --- Noisy Layer for Exploration ---
@@ -103,7 +103,7 @@ class NoisyLinear(nn.Module):
 # --- Dueling DQN with Noisy Layers ---
 class DuelingDQN(nn.Module):
     """A Dueling DQN architecture using NoisyLinear layers for exploration."""
-    def __init__(self):
+    def __init__(self) -> None:
         super(DuelingDQN, self).__init__()
         self.feature_layer = nn.Sequential(
             nn.Linear(9, 128),
@@ -431,19 +431,19 @@ import torch.optim as optim
 import torch.nn.functional as F
 from collections import namedtuple, deque
 import matplotlib.pyplot as plt
-import math
+import math`nfrom typing import Optional
 
 # --- Game Environment ---
 class TicTacToe:
     """A class to represent the Tic-Tac-Toe game environment."""
-    def __init__(self):
+    def __init__(self) -> None:
         self.board = np.zeros(9, dtype=np.float32)
-        self.current_winner = None
+        self.current_winner: Optional[float] = None
 
-    def available_moves(self):
+    def available_moves(self) -> list[int]:
         return [i for i, spot in enumerate(self.board) if spot == 0]
 
-    def make_move(self, square, letter):
+    def make_move(self, square: int, letter: float) -> bool:
         if self.board[square] == 0:
             self.board[square] = letter
             if self.winner(square, letter):
@@ -451,7 +451,7 @@ class TicTacToe:
             return True
         return False
 
-    def winner(self, square, letter):
+    def winner(self, square: int, letter: float) -> bool:
         # Check row, column, and diagonals for a win
         row_ind = square // 3
         if all(self.board[row_ind*3 + i] == letter for i in range(3)): return True
@@ -462,12 +462,12 @@ class TicTacToe:
             if all(self.board[i] == letter for i in [2, 4, 6]): return True
         return False
 
-    def get_state(self):
+    def get_state(self) -> np.ndarray:
         return self.board.copy()
 
-    def reset(self):
+    def reset(self) -> np.ndarray:
         self.board = np.zeros(9, dtype=np.float32)
-        self.current_winner = None
+        self.current_winner: Optional[float] = None
         return self.get_state()
 
 # --- Noisy Layer for Exploration ---
@@ -519,7 +519,7 @@ class NoisyLinear(nn.Module):
 # --- Dueling DQN with Noisy Layers ---
 class DuelingDQN(nn.Module):
     """A Dueling DQN architecture using NoisyLinear layers for exploration."""
-    def __init__(self):
+    def __init__(self) -> None:
         super(DuelingDQN, self).__init__()
         self.feature_layer = nn.Sequential(
             nn.Linear(9, 128),
