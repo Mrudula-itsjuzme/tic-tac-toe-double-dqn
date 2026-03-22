@@ -1,37 +1,45 @@
-# tic-tac-toe-double-dqn
+# Tic-Tac-Toe with Double Deep Q-Networks (Double DQN)
 
 ## Overview
-This repository contains source code and supporting assets for **tic-tac-toe-double-dqn**.
 
-## Features
-- Implementation and experiments for this project
-- Reproducible local development workflow
-- Organized structure for extension and maintenance
+This repository features an implementation of the Double Deep Q-Network (Double DQN) reinforcement learning algorithm to master the game of Tic-Tac-Toe.
+
+## Implementation Details
+
+The project utilizes Deep Reinforcement Learning to train an agent that can make optimal moves in a competitive environment. The use of Double DQN helps in reducing the overestimation of Q-values, leading to more stable training.
+
+### Key Features
+
+- **Double DQN Agent**: A neural-network-based agent trained using reinforcement learning.
+- **Configurable Environment**: A flexible game environment for training and evaluation.
+- **Reproducible Experiments**: Scripts and logs detailing the training progress and agent performance.
 
 ## Getting Started
-### 1. Clone
-`ash
-git clone https://github.com/Mrudula-itsjuzme/tic-tac-toe-double-dqn.git
-cd tic-tac-toe-double-dqn
-`
 
-### 2. Install Dependencies
-- Python project: pip install -r requirements.txt
-- Node project: 
-pm install
-- C/C++ project: follow build steps in source/docs
+### Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Mrudula-itsjuzme/tic-tac-toe-double-dqn.git
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### 3. Run
-- Python: python main.py (or project entry file)
-- Node: 
-pm run dev / 
-pm start
-- C/C++: build and run target binary
+### Training the Agent
+Execute the main entry script to begin the training process:
+```bash
+python main.py
+```
 
 ## Repository Structure
-- src/ source code
-- docs/ documentation (if present)
-- 	ests/ tests (if present)
 
-## Notes
-Replace this baseline with project-specific details such as datasets, model configs, architecture notes, and output examples.
+- **src/**: Core implementation of the Double DQN agent and game logic.
+- **docs/**: Architectural notes and research findings.
+- **FAI_proj_S3/**: Directory containing project-specific assets and configurations.
+
+## Future Enhancements
+
+- Integration with multi-agent reinforcement learning (MARL).
+- Support for larger board sizes and complex game variants.
+- Implementation of a user interface for human-versus-AI gameplay.
