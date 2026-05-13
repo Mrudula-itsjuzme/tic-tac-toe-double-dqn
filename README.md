@@ -1,45 +1,106 @@
-# Tic-Tac-Toe with Double Deep Q-Networks (Double DQN)
+# Tic-Tac-Toe with Double Deep Q-Networks
 
-## Overview
+A reinforcement-learning project that trains a neural-network agent to play Tic-Tac-Toe using Double Deep Q-Networks, or Double DQN.
 
-This repository features an implementation of the Double Deep Q-Network (Double DQN) reinforcement learning algorithm to master the game of Tic-Tac-Toe.
+The project is intentionally built on a small game environment so the reinforcement-learning loop is easier to inspect, debug, and explain.
 
-## Implementation Details
+---
 
-The project utilizes Deep Reinforcement Learning to train an agent that can make optimal moves in a competitive environment. The use of Double DQN helps in reducing the overestimation of Q-values, leading to more stable training.
+## Problem statement
 
-### Key Features
+Standard DQN can overestimate action values because the same network is used to both choose and evaluate actions. Double DQN reduces this overestimation by separating action selection from action evaluation.
 
-- **Double DQN Agent**: A neural-network-based agent trained using reinforcement learning.
-- **Configurable Environment**: A flexible game environment for training and evaluation.
-- **Reproducible Experiments**: Scripts and logs detailing the training progress and agent performance.
+This repository applies that idea to Tic-Tac-Toe as a compact environment for studying value-based reinforcement learning.
 
-## Getting Started
+---
 
-### Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Mrudula-itsjuzme/tic-tac-toe-double-dqn.git
-   ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## What this project includes
 
-### Training the Agent
-Execute the main entry script to begin the training process:
+- Tic-Tac-Toe game environment
+- Double DQN training logic
+- neural-network value approximation
+- experience replay
+- epsilon-greedy exploration
+- training and evaluation scripts
+- project notes and experiment assets
+
+---
+
+## RL pipeline
+
+```text
+Game State
+   ↓
+Agent selects action
+   ↓
+Environment returns reward + next state
+   ↓
+Experience stored in replay buffer
+   ↓
+Mini-batch training
+   ↓
+Target network update
+   ↓
+Improved policy
+```
+
+---
+
+## Why Double DQN?
+
+Double DQN improves stability by using:
+
+- an **online network** to choose the best next action
+- a **target network** to evaluate that action
+
+This reduces overly optimistic Q-value estimates and usually produces more stable learning than vanilla DQN.
+
+---
+
+## Quick start
+
 ```bash
+git clone https://github.com/Mrudula-itsjuzme/tic-tac-toe-double-dqn.git
+cd tic-tac-toe-double-dqn
+
+pip install -r requirements.txt
 python main.py
 ```
 
-## Repository Structure
+---
 
-- **src/**: Core implementation of the Double DQN agent and game logic.
-- **docs/**: Architectural notes and research findings.
-- **FAI_proj_S3/**: Directory containing project-specific assets and configurations.
+## Repository structure
 
-## Future Enhancements
+```text
+tic-tac-toe-double-dqn/
+├── src/            # Double DQN agent and game logic
+├── docs/           # architecture notes and research findings
+├── FAI_proj_S3/    # project-specific assets/configuration
+└── README.md
+```
 
-- Integration with multi-agent reinforcement learning (MARL).
-- Support for larger board sizes and complex game variants.
-- Implementation of a user interface for human-versus-AI gameplay.
+---
+
+## Tech stack
+
+- Python
+- Reinforcement Learning
+- Deep Q-Learning
+- Neural networks
+- Experience replay
+
+---
+
+## Future improvements
+
+- add a clean human-vs-agent interface
+- compare DQN vs Double DQN directly
+- add training curves and win-rate plots
+- extend to larger board sizes
+- experiment with self-play and multi-agent RL
+
+---
+
+## Author
+
+Built by [Pedamallu Sai Mrudula](https://github.com/Mrudula-itsjuzme) as part of an applied AI and reinforcement-learning portfolio.
