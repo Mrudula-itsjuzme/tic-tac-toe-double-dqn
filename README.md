@@ -6,6 +6,19 @@ The project is intentionally built on a small game environment so the reinforcem
 
 ---
 
+## Project links and evidence
+
+| Item | Link / Note |
+|---|---|
+| Repository | https://github.com/Mrudula-itsjuzme/tic-tac-toe-double-dqn |
+| Paper / reference | Based on the Double DQN reinforcement-learning concept; no project paper attached |
+| Demo video | Not uploaded yet |
+| Deployment | Not applicable; local training/evaluation project |
+| Dataset note | No external dataset required; experiences are generated through the Tic-Tac-Toe environment |
+| Result screenshots / plots | Add training curves, reward plots, and win-rate screenshots under `docs/` when finalized |
+
+---
+
 ## Problem statement
 
 Standard DQN can overestimate action values because the same network is used to both choose and evaluate actions. Double DQN reduces this overestimation by separating action selection from action evaluation.
